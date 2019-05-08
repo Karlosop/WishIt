@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Zamluveno
+{% endblock %}
+
+{% block main %}
+    {% if not dibs %}
+    <h3>Nemáš nic zamluveno!</h3><br>
+    {% else %}
+    <h3>Mám zamluveno:</h3><br>
+
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Oslavenec</th>
+                <th scope="col">Přání</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dib in dibs %}
+            <tr>
+                <td><a href='user/{{dib["user_id"]}}'>{{dib['user_name']}}</a></td>
+                <td>{{dib['wish_name']}} <a href='/undib/{{dib["wish_id"]}}'>(uvolnit)</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+
+
+
+
+{% endblock %}

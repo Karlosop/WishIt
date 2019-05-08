@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Má přání
+{% endblock %}
+
+{% block main %}
+    <!-- form to make a new wish -->
+    <form action="/my_wishlist" method="post">
+        <div class='form-group'>
+            <input class='form-control' name='wish_name' placeholder='Co si přeješ? (povinné pole)'
+            type="text" size='100' maxlength='100' autofocus='on' autocomplete='off'>
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" name='wish_description' rows="6"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Potvrdit</button>
+    </form>
+    <br><br>
+    <h2>Seznam přání:</h2>
+
+    <br>
+
+    {% for wish in wishlist %}
+        {% if not wish["wish_originator_id"] %}
+
+            <p><a class="nav-link" href="/wish/{{wish['wish_id']}}">{{wish["wish_name"]}}</a></p> <!--   -->
+
+        {% endif %}
+    {% endfor %}
+
+
+{% endblock %}
