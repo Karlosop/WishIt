@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Wish details
+{% endblock %}
+
+{% block main %}
+    <h4>Oslavenec: {{user_name}}</h4>
+    <h4>Přání: {{wish['wish_name']}}</h3>
+    <br>
+    <h5>Zamluveno: {{wish['wish_dibs']}}</h5>
+    {{wish['wish_description']}}
+    
+    {% if wish['wish_originator_id'] %}
+    <br><br>    
+    <span class="warning">Pozor, toto přání nepřidal/a {{user_name}}, ale {{originator}}. {{user_name}} o tomto přání nemusí vědět.</span>
+    {% endif %}
+
+    {% if wish['wish_originator_id']==viewer_id %}
+    <br><br>    
+    <a href='/change_wish/{{wish["wish_id"]}}' type="button" class="btn btn-primary-outline btn-sm">Změnit přání</a>
+    <a href='/delete_wish/{{wish["wish_id"]}}' type="button" class="btn btn-danger btn-sm">Smazat přání</a><br>
+    {% endif %}    
+
+{% endblock %}

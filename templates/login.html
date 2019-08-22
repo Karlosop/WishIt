@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="/login" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control input-sm" name="username" placeholder="Jméno" type="text"/>
+        </div>
+        <div class="form-group">
+            <input class="form-control input-lg" name="password" placeholder="Heslo" type="password"/>
+        </div>
+        <button class="btn btn-primary" type="submit">Přihlásit</button>
+    </form>
+{% endblock %}

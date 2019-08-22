@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Wish details
+{% endblock %}
+
+{% block main %}
+
+    <h4>Mé přání: {{wish['wish_name']}}</h3>
+    <br>
+    <h5>Popis přání: </h5>{{wish['wish_description']}}
+    <br>
+    <br>
+    <a href='/change_wish/{{wish["wish_id"]}}' type="button" class="btn btn-primary-outline btn-sm">Změnit přání</a>
+    <a href='/delete_wish/{{wish["wish_id"]}}' type="button" class="btn btn-danger btn-sm">Smazat přání</a><br>
+    
+{% endblock %}

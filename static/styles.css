@@ -1,0 +1,35 @@
+.column2 {
+  float: left;
+  width: 50%;
+}
+
+.column3 {
+  float: left;
+  width: 33%;
+}
+
+.column4 {
+  float: left;
+  width: 25%;
+}
+
+.column5 {
+  float: left;
+  width: 20%;
+}
+
+.warning {
+  color: red
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+
+    /* change color */
+    color: black
+}
